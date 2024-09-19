@@ -38,7 +38,7 @@ import { createDownloadURL, srtToLrc } from '../utils/fileUtils';
 import languages from '../assets/languages.json';
 
 // 状态管理
-const url = ref<string>('http://127.0.0.1:5000');
+const url = ref<string | null>(null);
 const apiKey = ref<string | null>(null);
 const file = ref<File | null>(null);
 const selectedLanguage = ref<string | null>(null);
@@ -125,7 +125,7 @@ const sendRequest = async () => {
     formData.append("response_format", "srt");
     formData.append("timestamp_granularities", "segment");
     if (selectedLanguage.value) formData.append("language", selectedLanguage.value);
-
+    if (url.value == null) url.value = "http://127.0.0.1:5000";
     try {
         const response = await axios.post(`${url.value}/v1/audio/transcriptions`, formData, { headers });
         result.value = response.data;
