@@ -2,6 +2,8 @@
 
 Whisper WebUI is a simple frontend interface for processing and transcribing audio files using OpenAI Whisper API. This project allows you to upload audio files, transcribe them into subtitles or lyrics, and download the results in SRT or LRC format.
 
+![image](https://github.com/user-attachments/assets/b0518176-563e-49ca-835d-5a75e54aa323)
+
 ## Features
 
 - Upload audio files for transcription
