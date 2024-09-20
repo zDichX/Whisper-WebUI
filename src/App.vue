@@ -1,5 +1,5 @@
 <template>
-  <intro v-if="showIntro"/>
+  <intro v-if="showIntro" @anim-complete="unloadIntro"/>
   <bg v-if="showBg"/>
   <card v-if="showCard" />
 </template>
@@ -20,11 +20,13 @@ onMounted(() => {
   setTimeout(() => {
     refVar.value = true
   }, delay)
-}
+  }
   loadComponent(showIntro, 0)
   loadComponent(showBg, 2800)
   loadComponent(showCard, 3000)
   })
 
-
+function unloadIntro() {
+  showIntro.value = false;
+}
 </script>
