@@ -71,7 +71,7 @@ const startAnimation = () => {
 
 const showTextBoxAnim = () => {
     gsap.timeline()
-    .fromTo(".result", { maxHeight: "0vh" }, { maxHeight: "20vh", duration: 2, ease: "power4.inOut" })
+    .fromTo(".result", { maxHeight: "0vh", margin: "0 0" }, { maxHeight: "20vh", margin: "1em 0" , duration: 2, ease: "power4.inOut" })
     .fromTo(".downloadButtons", { opacity: 0.5 }, { opacity: 1, duration: 0.5, ease: "power4.inOut" });
 };
 
@@ -249,6 +249,7 @@ select {
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0px 10px;
+    margin: 0;
 }
 
 /* .dlContainer {
