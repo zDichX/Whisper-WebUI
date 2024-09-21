@@ -8,8 +8,8 @@
 import { ref, onMounted } from 'vue'
 
 import card from './components/card.vue';
-import bg from './components/bg.vue'
-import intro from './components/intro.vue'
+import bg from './components/bg.vue';
+import intro from './components/intro.vue';
 
 const showIntro = ref<boolean>(false)
 const showBg = ref<boolean>(false)

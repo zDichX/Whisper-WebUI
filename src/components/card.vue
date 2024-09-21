@@ -33,7 +33,9 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import axios from 'axios';
 import gsap from 'gsap';
 
-import { createDownloadURL, srtToLrc } from '../utils/fileUtils';
+import { createDownloadURL, srtToLrc } from '../utils/file';
+import { convertToAudio } from '../utils/ffmpeg';
+
 
 import languages from '../assets/languages.json';
 
@@ -105,6 +107,20 @@ const sendRequest = async () => {
     if (!file.value) {
         error.value = 'Please upload a file.';
         return;
+    }
+
+    // console.log(file.value)
+    // if (file.value.type === "video/mp4" || file.value.type === "video/mpeg" || file.value.type === "video/webm") {
+    //     console.log('video')
+    // } else if (file.value.type === "audio/mpeg" || file.value.type === "audio/mpga" || file.value.type === "audio/mp4" || file.value.type === "audio/wav" || file.value.type === "audio/webm") {
+    //     console.log('audio')
+    // } else {
+    //     console.log('Unknown file type')
+    // }
+    if (file.value.size > 24000000) {
+        console.log('too large');
+        const convertedFile = await convertToAudio(file.value);
+        console.log(convertedFile)
     }
 
     if (labelElement.value) {

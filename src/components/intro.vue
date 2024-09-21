@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, defineEmits } from 'vue';
+import { ref, onMounted } from 'vue';
 import gsap from 'gsap';
 
 const arrayRange = Array.from({ length: 10 }, (_, i) => i + 1);
@@ -66,9 +66,7 @@ onMounted(() => {
     top: 40%;
     left: 50%;
     transform: translate(-50%);
-
     z-index: -5;
-
     display: flex;
     align-items: center;
     height: 70px;
@@ -87,6 +85,7 @@ onMounted(() => {
     top: 46%;
     left: 50%;
     transform: translate(-50%);
+    z-index: -4;
     font-size: 36px;
     font-weight: bold;
     color: rgb(0, 191, 255);

@@ -70,13 +70,13 @@ onMounted(() => {
   }
   
   .circle2 {
-    background: radial-gradient(circle,#537895, #537895, #004db1);
+    background: radial-gradient(circle,#537895, #53958f, #004db1);
     opacity: 0.5;
     bottom: 12vh;
   }
 
   .circle3 {
-    background: radial-gradient(circle,#537895, #537895, #004db1);
+    background: radial-gradient(circle,#537895, #53958f, #004db1);
     opacity: 0.3;
     bottom: 9vh;
   }
