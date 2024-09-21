@@ -34,7 +34,7 @@ import axios from 'axios';
 import gsap from 'gsap';
 
 import { createDownloadURL, srtToLrc } from '../utils/file';
-import { convertToAudio } from '../utils/ffmpeg';
+// import { convertToAudio } from '../utils/ffmpeg';
 
 
 import languages from '../assets/languages.json';
@@ -119,8 +119,8 @@ const sendRequest = async () => {
     // }
     if (file.value.size > 24000000) {
         console.log('too large');
-        const convertedFile = await convertToAudio(file.value);
-        console.log(convertedFile)
+        // const convertedFile = await convertToAudio(file.value);
+        // console.log(convertedFile)
     }
 
     if (labelElement.value) {
